@@ -1,5 +1,5 @@
 import { ARCHIVE_BLOCK, CALL_TO_ACTION, CONTENT, MEDIA_BLOCK } from './blocks'
-import { CATEGORIES } from './categories'
+import { PRODUCT_CATEGORIES } from './categories'
 import { META } from './meta'
 
 export const PRODUCTS = `
@@ -12,6 +12,7 @@ export const PRODUCTS = `
   }
 `
 
+// change here categories to product categories
 export const PRODUCT = `
   query Product($slug: String, $draft: Boolean) {
     Products(where: { slug: { equals: $slug}}, limit: 1, draft: $draft) {
@@ -19,7 +20,7 @@ export const PRODUCT = `
         id
         title
         stripeProductID
-        ${CATEGORIES}
+        ${PRODUCT_CATEGORIES}
         layout {
           ${CALL_TO_ACTION}
           ${CONTENT}
