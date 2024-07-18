@@ -20,8 +20,8 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
       {navItems.map(({ link }, i) => {
         return <CMSLink key={i} {...link} appearance="none" />
       })}
-      <CartLink />
       {user && <Link href="/account">Account</Link>}
+      <CartLink />
       {!user && (
         <Button
           el="link"
@@ -34,7 +34,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
       )}
       {/* sometime we also wwant to display cart link */}
       {/* if user exits then maybe that user has a cart link */}
-      {user && <CartLink />}
+      {/* {user && <CartLink />} */}
     </nav>
   )
 }
